@@ -140,6 +140,37 @@ An author marks their report's case resolved after the pet is reunited with its 
 - Public map points MUST represent the author-selected last-seen, spotted, or found location; a privately shared care/pickup address MUST remain separate.
 - A deleted or unavailable report MUST show a not-found state; its messages and private contact details MUST not become publicly accessible.
 
+## Design Theme & Branding
+
+PawFinder's visual tone MUST be warm, trustworthy, urgent yet calm, and high-contrast for rapid outdoor and mobile scanning. Use Tailwind CSS utilities for most layout and component styling; reserve `src/app/globals.css` for design tokens, global defaults, focus styling, and reusable global components.
+
+### Color Palette
+
+| Role | Color | Usage |
+| --- | --- | --- |
+| Primary brand — Warm Teal | `#0F766E` (teal-700) | Navigation highlights, primary buttons, and active filters |
+| Secondary accent — Amber Alert | `#D97706` (amber-600) | Missing status badges and urgent callouts |
+| Supportive badge — Emerald | `#059669` (emerald-600) | In temporary care and Resolved statuses |
+| Supportive badge — Sky | `#0284C7` (sky-600) | Spotted status |
+| Background canvas | `#F8FAFC` (slate-50) | Low-glare page background |
+| Surface | `#FFFFFF` (white) | Cards and raised surfaces |
+| Border | `#E2E8F0` (slate-200) | Surface and card borders |
+| Primary text | `#0F172A` (slate-900) | Main content text |
+| Muted text | `#475569` (slate-600) | Secondary content and labels |
+
+### Typography
+
+- Headings MUST use Plus Jakarta Sans, weights 600 and 700.
+- Body text and UI controls MUST use Inter, weights 400, 500, and 600.
+
+### Layout & Accessibility
+
+- Use a mobile-first responsive grid: `grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`.
+- Constrain primary page content with `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`.
+- Filter controls, map pins, and inbox actions MUST provide touch targets of at least 44 by 44 CSS pixels on mobile.
+- Use semantic HTML5 landmarks (`header`, `nav`, `main#main-content`, and `footer`) and provide a skip-to-content link.
+- Interactive elements MUST have visible keyboard focus styling, using Tailwind `focus-visible:ring-2` utilities where practical.
+
 ## Requirements _(mandatory)_
 
 ### Functional Requirements
